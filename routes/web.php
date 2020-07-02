@@ -16,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 Route::get('/alunos', 'AlunoController@index');
+Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
+Route::get('/alunos/editar', 'AlunoController@editar');
+
 
 Route::get('/cursos', 'CursoController@index');
+Route::get('/cursos/cadastrar', 'CursoController@cadastrar');
+Route::get('/cursos/editar', 'CursoController@editar');
 
 Route::get('/importar-cursos', 'ImportarCursoController@index');
+Route::get('/importar-cursos/analise', 'ImportarCursoController@analise');
