@@ -14,3 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/alunos', 'AlunoController@index');
+
+Route::get('/cursos', 'CursoController@index');
+
+Route::get('/importar-cursos', 'ImportarCursoController@index');
