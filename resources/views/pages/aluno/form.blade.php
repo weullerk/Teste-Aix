@@ -36,10 +36,9 @@
                             <label class="col-md-2 col-form-label" for="situacao">Situação</label>
                             <div class="col-md-10">
                                 <select name="situacao" id="situacao" class="custom-select">
-                                    <option selected>Selecionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option>Selecionar</option>
+                                    <option value="1">Ativo</option>
+                                    <option value="2">Inativo</option>
                                 </select>
                             </div>
                         </div>
@@ -91,9 +90,9 @@
                             <div class="col-md-10">
                                 <select name="curso" id="curso" class="custom-select">
                                     <option selected>Selecionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach($cursos as $curso)
+                                        <option value="{{ $curso->id }}">{{ $curso->curso }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -112,6 +111,16 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="customFile" class="col-md-2 col-form-label">Foto do Aluno</label>
+                            <div class="col-md-10">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="foto">
+                                    <label class="custom-file-label" for="customFile">Buscar foto</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <button type="button" class="btn btn-primary waves-effect waves-light mt-4">Cadastrar</button>
 
                     </form>
@@ -122,4 +131,24 @@
     <!-- end row -->
 
 
+@endsection
+
+@section('script')
+    <!-- js script -->
+    <script>
+        function fileChange(e) {
+            console.log(e);
+            if (e.target.value) {
+                let fileName = e.target.value.split("\\");
+                $('.custom-file-label').text(fileName[fileName.length-1]);
+            }  else {
+                $('.custom-file-label').text("Buscar foto");
+            }
+        }
+
+        $(document).ready(function() {
+            $('#customFile').on('change', fileChange);
+        })
+
+    </script>
 @endsection

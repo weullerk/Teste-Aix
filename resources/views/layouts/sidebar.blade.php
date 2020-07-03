@@ -10,14 +10,14 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="alunos" class=" waves-effect">
+                    <a href="{{ config('app.url') }}/alunos" class=" waves-effect">
                         <i class="bx bx-calendar"></i>
                         <span>Alunos</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="cursos" class=" waves-effect">
+                    <a href="{{ config('app.url') }}/cursos" class=" waves-effect">
                         <i class="bx bx-calendar"></i>
                         <span>Cursos</span>
                     </a>
@@ -26,7 +26,7 @@
                 <li class="menu-title">Ferramentas</li>
 
                 <li>
-                    <a href="importar-cursos" class=" waves-effect">
+                    <a href="{{ config('app.url') }}/importar-cursos" class=" waves-effect">
                         <i class="bx bx-calendar"></i>
                         <span>Importar Cursos</span>
                     </a>

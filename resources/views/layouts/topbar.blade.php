@@ -5,19 +5,19 @@
             <div class="navbar-brand-box">
                 <a href="index" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo.svg" alt="" height="22">
+                        <img src="{{ config('app.url') }}/assets/images/logo.svg" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                        <img src="{{ config('app.url') }}/assets/images/logo-dark.png" alt="" height="17">
                     </span>
                 </a>
 
                 <a href="index" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.svg" alt="" height="22">
+                        <img src="{{ config('app.url') }}/assets/images/logo-light.svg" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="19">
+                        <img src="{{ config('app.url') }}/assets/images/logo-light.png" alt="" height="19">
                     </span>
                 </a>
             </div>
@@ -61,28 +61,28 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
+                    <img class="" src="{{ config('app.url') }}/assets/images/flags/us.jpg" alt="Header Language" height="16">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
+                        <img src="{{ config('app.url') }}/assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
+                        <img src="{{ config('app.url') }}/assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
+                        <img src="{{ config('app.url') }}/assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
+                        <img src="{{ config('app.url') }}/assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
                     </a>
                 </div>
             </div>

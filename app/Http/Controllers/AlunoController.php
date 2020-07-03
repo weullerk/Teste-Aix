@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Services\CursoService;
 use Illuminate\Http\Request;
 
 class AlunoController extends Controller
@@ -15,7 +16,13 @@ class AlunoController extends Controller
 
     public function cadastrar(Request $request)
     {
-        return view('pages.aluno.form');
+        $data = [];
+
+        $cursoService = new CursoService();
+
+        $data['cursos'] = $cursoService->listar();
+
+        return view('pages.aluno.form', $data);
     }
 
     public function editar($id, Request $request)

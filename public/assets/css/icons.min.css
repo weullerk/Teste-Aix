@@ -13,8 +13,8 @@ File: Icons Css File
 
 @font-face {
   font-family: "Material Design Icons";
-  src: url(/fonts/materialdesignicons-webfont.eot?a1a0ed860f50ffd42ba46d7c10f30255);
-  src: url(/fonts/materialdesignicons-webfont.eot?a1a0ed860f50ffd42ba46d7c10f30255) format("embedded-opentype"), url(/fonts/materialdesignicons-webfont.woff2?7fb0e3780372f10f804513e2e0c39e78) format("woff2"), url(/fonts/materialdesignicons-webfont.woff?63d2a5950fc212096c3612f71ae66f64) format("woff"), url(/fonts/materialdesignicons-webfont.ttf?fe1545ef4dd1eef2f1e25528898fc0b3) format("truetype");
+  src: url(../fonts/materialdesignicons-webfont.eot?a1a0ed860f50ffd42ba46d7c10f30255);
+  src: url(../fonts/materialdesignicons-webfont.eot?a1a0ed860f50ffd42ba46d7c10f30255) format("embedded-opentype"), url(../fonts/materialdesignicons-webfont.woff2?7fb0e3780372f10f804513e2e0c39e78) format("woff2"), url(../fonts/materialdesignicons-webfont.woff?63d2a5950fc212096c3612f71ae66f64) format("woff"), url(../fonts/materialdesignicons-webfont.ttf?fe1545ef4dd1eef2f1e25528898fc0b3) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -20455,8 +20455,8 @@ File: Icons Css File
   font-family: "boxicons";
   font-weight: normal;
   font-style: normal;
-  src: url(/fonts/boxicons.eot?afbad0fa2cbbb785e034ae3e3bb328ff);
-  src: url(/fonts/boxicons.eot?afbad0fa2cbbb785e034ae3e3bb328ff) format("embedded-opentype"), url(/fonts/boxicons.woff2?1ec26ee17fd6b5903e74b8a599166a22) format("woff2"), url(/fonts/boxicons.woff?deea39cb9dc8b17f9d640014ca2f87af) format("woff"), url(/fonts/boxicons.ttf?f46ca69e63f9c5f080203c3f510b4110) format("truetype"), url(/fonts/boxicons.svg?ac68c5bee58c439e4c2851555d41be8b) format("svg");
+  src: url(../fonts/boxicons.eot?afbad0fa2cbbb785e034ae3e3bb328ff);
+  src: url(../fonts/boxicons.eot?afbad0fa2cbbb785e034ae3e3bb328ff) format("embedded-opentype"), url(../fonts/boxicons.woff2?1ec26ee17fd6b5903e74b8a599166a22) format("woff2"), url(../fonts/boxicons.woff?deea39cb9dc8b17f9d640014ca2f87af) format("woff"), url(../fonts/boxicons.ttf?f46ca69e63f9c5f080203c3f510b4110) format("truetype"), url(../fonts/boxicons.svg?ac68c5bee58c439e4c2851555d41be8b) format("svg");
 }
 
 .bx {
@@ -31423,8 +31423,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/fa-brands-400.eot?c1868c9545d2de1cf8488f1dadd8c9d0);
-  src: url(/fonts/fa-brands-400.eot?c1868c9545d2de1cf8488f1dadd8c9d0) format("embedded-opentype"), url(/fonts/fa-brands-400.woff2?a06da7f0950f9dd366fc9db9d56d618a) format("woff2"), url(/fonts/fa-brands-400.woff?ec3cfddedb8bebd2d7a3fdf511f7c1cc) format("woff"), url(/fonts/fa-brands-400.ttf?13685372945d816a2b474fc082fd9aaa) format("truetype"), url(/fonts/fa-brands-400.svg?0cb5a5c0d251c109458c85c6afeffbaa) format("svg");
+  src: url(../fonts/fa-brands-400.eot?c1868c9545d2de1cf8488f1dadd8c9d0);
+  src: url(../fonts/fa-brands-400.eot?c1868c9545d2de1cf8488f1dadd8c9d0) format("embedded-opentype"), url(../fonts/fa-brands-400.woff2?a06da7f0950f9dd366fc9db9d56d618a) format("woff2"), url(../fonts/fa-brands-400.woff?ec3cfddedb8bebd2d7a3fdf511f7c1cc) format("woff"), url(../fonts/fa-brands-400.ttf?13685372945d816a2b474fc082fd9aaa) format("truetype"), url(../fonts/fa-brands-400.svg?0cb5a5c0d251c109458c85c6afeffbaa) format("svg");
 }
 
 .fab {
@@ -31437,8 +31437,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/fa-regular-400.eot?261d666b0147c6c5cda07265f98b8f8c);
-  src: url(/fonts/fa-regular-400.eot?261d666b0147c6c5cda07265f98b8f8c) format("embedded-opentype"), url(/fonts/fa-regular-400.woff2?c20b5b7362d8d7bb7eddf94344ace33e) format("woff2"), url(/fonts/fa-regular-400.woff?f89ea91ecd1ca2db7e09baa2c4b156d1) format("woff"), url(/fonts/fa-regular-400.ttf?db78b9359171f24936b16d84f63af378) format("truetype"), url(/fonts/fa-regular-400.svg?89ffa3aba80d30ee0a9371b25c968bbb) format("svg");
+  src: url(../fonts/fa-regular-400.eot?261d666b0147c6c5cda07265f98b8f8c);
+  src: url(../fonts/fa-regular-400.eot?261d666b0147c6c5cda07265f98b8f8c) format("embedded-opentype"), url(../fonts/fa-regular-400.woff2?c20b5b7362d8d7bb7eddf94344ace33e) format("woff2"), url(../fonts/fa-regular-400.woff?f89ea91ecd1ca2db7e09baa2c4b156d1) format("woff"), url(../fonts/fa-regular-400.ttf?db78b9359171f24936b16d84f63af378) format("truetype"), url(../fonts/fa-regular-400.svg?89ffa3aba80d30ee0a9371b25c968bbb) format("svg");
 }
 
 .far {
@@ -31451,8 +31451,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/fonts/fa-solid-900.eot?a0369ea57eb6d3843d6474c035111f29);
-  src: url(/fonts/fa-solid-900.eot?a0369ea57eb6d3843d6474c035111f29) format("embedded-opentype"), url(/fonts/fa-solid-900.woff2?b15db15f746f29ffa02638cb455b8ec0) format("woff2"), url(/fonts/fa-solid-900.woff?bea989e82b07e9687c26fc58a4805021) format("woff"), url(/fonts/fa-solid-900.ttf?1ab236ed440ee51810c56bd16628aef0) format("truetype"), url(/fonts/fa-solid-900.svg?ec763292e583294612f124c0b0def500) format("svg");
+  src: url(../fonts/fa-solid-900.eot?a0369ea57eb6d3843d6474c035111f29);
+  src: url(../fonts/fa-solid-900.eot?a0369ea57eb6d3843d6474c035111f29) format("embedded-opentype"), url(../fonts/fa-solid-900.woff2?b15db15f746f29ffa02638cb455b8ec0) format("woff2"), url(../fonts/fa-solid-900.woff?bea989e82b07e9687c26fc58a4805021) format("woff"), url(../fonts/fa-solid-900.ttf?1ab236ed440ee51810c56bd16628aef0) format("truetype"), url(../fonts/fa-solid-900.svg?ec763292e583294612f124c0b0def500) format("svg");
 }
 
 .fa,
@@ -31463,8 +31463,8 @@ readers do not read off random characters that represent icons */
 
 @font-face {
   font-family: "dripicons-v2";
-  src: url(/fonts/dripicons-v2.eot?7e12564e72400735ae5b671780f6a9f7);
-  src: url(/fonts/dripicons-v2.eot?7e12564e72400735ae5b671780f6a9f7) format("embedded-opentype"), url(/fonts/dripicons-v2.woff?11fc83ae11617015f2fcde2065fb34d3) format("woff"), url(/fonts/dripicons-v2.ttf?cf09c981aeaa8736810133ab1148e4a3) format("truetype"), url(/fonts/dripicons-v2.svg?835984438066bd8944a7692e331152a7) format("svg");
+  src: url(../fonts/dripicons-v2.eot?7e12564e72400735ae5b671780f6a9f7);
+  src: url(../fonts/dripicons-v2.eot?7e12564e72400735ae5b671780f6a9f7) format("embedded-opentype"), url(../fonts/dripicons-v2.woff?11fc83ae11617015f2fcde2065fb34d3) format("woff"), url(../fonts/dripicons-v2.ttf?cf09c981aeaa8736810133ab1148e4a3) format("truetype"), url(../fonts/dripicons-v2.svg?835984438066bd8944a7692e331152a7) format("svg");
   font-weight: normal;
   font-style: normal;
 }

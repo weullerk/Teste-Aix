@@ -112,7 +112,7 @@ File: Sweetalert Js File
                 animation: false
             })
         });
-		
+
         //Auto Close Timer
         $('#sa-close').click(function () {
             var timerInterval;
