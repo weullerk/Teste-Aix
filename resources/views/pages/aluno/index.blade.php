@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') Cursos @endsection
+@section('title') Alunos @endsection
 
 @section('css')
     <!-- DataTables -->
@@ -10,8 +10,8 @@
 @section('content')
 
     @component('common-components.breadcrumb')
-        @slot('title') Cursos @endslot
-        @slot('li_1') Cursos @endslot
+        @slot('title') Alunos @endslot
+        @slot('li_1') Alunos @endslot
         @slot('li_2') Lista de Cursos @endslot
     @endcomponent
 
@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Alunos
-                        <button type="button" class="btn-sm btn btn-primary waves-effect waves-light">Adicionar</button>
+                        <a href="{{ config('app.url') }}/alunos/cadastrar"><button type="button" class="btn-sm btn btn-primary waves-effect waves-light">Adicionar</button></a>
                     </h4>
                     <p class="card-title-desc">Todos os alunos registrados e suas informações relevantes se encontram na tabela abaixo.</p>
 

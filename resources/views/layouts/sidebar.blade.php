@@ -11,14 +11,14 @@
 
                 <li>
                     <a href="{{ config('app.url') }}/alunos" class=" waves-effect">
-                        <i class="bx bx-calendar"></i>
+                        <i class="bx bx-user"></i>
                         <span>Alunos</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ config('app.url') }}/cursos" class=" waves-effect">
-                        <i class="bx bx-calendar"></i>
+                        <i class="bx bx-book"></i>
                         <span>Cursos</span>
                     </a>
                 </li>
@@ -27,7 +27,7 @@
 
                 <li>
                     <a href="{{ config('app.url') }}/importar-cursos" class=" waves-effect">
-                        <i class="bx bx-calendar"></i>
+                        <i class="bx bx-import"></i>
                         <span>Importar Cursos</span>
                     </a>
                 </li>

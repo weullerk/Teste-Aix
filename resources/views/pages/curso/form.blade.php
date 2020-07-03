@@ -4,7 +4,7 @@
 
 @section('content')
     @component('common-components.breadcrumb')
-        @slot('title') Curso  @endslot
+        @slot('title') @if (isset($curso)) Editar @else Cadastrar @endif @endslot Curso  @endslot
         @slot('li_1') Curso @endslot
         @slot('li_2') @if (isset($curso)) Editar @else Cadastrar @endif @endslot
     @endcomponent
@@ -44,8 +44,8 @@
                             <div class="col-md-10">
                                 <select name="situacao" id="situacao" class="custom-select">
                                     <option>Selecionar</option>
-                                    <option {{ $curso->situacao == 1 ? 'selected' : '' }} value="1">Ativo</option>
-                                    <option {{ $curso->situacao == 2 ? 'selected' : '' }} value="2">Inativo</option>
+                                    <option {{ isset($curso) && $curso->situacao == 1 ? 'selected' : '' }} value="1">Ativo</option>
+                                    <option {{ isset($curso) && $curso->situacao == 2 ? 'selected' : '' }} value="2">Inativo</option>
                                 </select>
                             </div>
                         </div>

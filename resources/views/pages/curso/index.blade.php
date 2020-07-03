@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Cursos
-                        <button type="button" class="btn-sm btn btn-primary waves-effect waves-light">Adicionar</button>
+                        <a href="{{ config('app.url') }}/cursos/cadastrar"><button type="button" class="btn-sm btn btn-primary waves-effect waves-light">Adicionar</button></a>
                     </h4>
                     <p class="card-title-desc">Todos os cursos registrados e suas informações relevantes se encontram na tabela abaixo.</p>
 

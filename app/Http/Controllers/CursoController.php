@@ -22,7 +22,8 @@ class CursoController extends Controller
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
                'curso' => 'required',
-               'matricula' => 'required'
+               'matricula' => 'required',
+                'situacao' => 'required'
             ]);
 
             if (!$validator->fails()) {
@@ -45,10 +46,20 @@ class CursoController extends Controller
         $service = new CursoService();
 
         if ($request->isMethod('post')) {
-            if ($service->editar($id, $request->all())) {
-                $data['message'] = "Curso editado com sucesso!";
+            $validator = Validator::make($request->all(), [
+                'curso' => 'required',
+                'matricula' => 'required',
+                'situacao' => 'required'
+            ]);
+
+            if (!$validator->fails()) {
+                if ($service->editar($id, $request->all())) {
+                    $data['message'] = "Curso editado com sucesso!";
+                } else {
+                    $data['message'] = "Falha ao editar o curso!";
+                }
             } else {
-                $data['message'] = "Falha ao editar o curso!";
+                $data['message'] = "Falha ao editar o curso! As informações não foram preenchidas.";
             }
         }
 

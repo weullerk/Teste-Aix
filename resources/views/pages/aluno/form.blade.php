@@ -4,9 +4,9 @@
 
 @section('content')
     @component('common-components.breadcrumb')
-        @slot('title') Alunos  @endslot
+        @slot('title') @if (isset($aluno)) Editar @else Cadastrar @endif Aluno  @endslot
         @slot('li_1') Alunos @endslot
-        @slot('li_2') Cadastrar @endslot
+        @slot('li_2') @if (isset($aluno)) Editar @else Cadastrar @endif @endslot
     @endcomponent
 
     <div class="row">
@@ -14,21 +14,28 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Cadastrar Aluno</h4>
-
-                    <form action="#">
+                    @if (isset($message))
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    <form action="" method="post" enctype="multipart/form-data">
+                        @csrf
 
                         <div class="form-group row">
                             <label for="form-control" class="col-md-2 col-form-label">Nome</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="nome" id="nome">
+                                <input class="form-control" type="text" value="{{ $aluno->nome ?? '' }}" name="nome" id="nome">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="matricula" class="col-md-2 col-form-label">Matrícula</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="matricula" id="matricula">
+                                <input class="form-control" type="text" value="{{ $aluno->matricula ?? '' }}" name="matricula" id="matricula">
                             </div>
                         </div>
 
@@ -37,8 +44,8 @@
                             <div class="col-md-10">
                                 <select name="situacao" id="situacao" class="custom-select">
                                     <option>Selecionar</option>
-                                    <option value="1">Ativo</option>
-                                    <option value="2">Inativo</option>
+                                    <option {{ isset($aluno) && $aluno->situacao == 1 ? 'selected' : '' }} value="1">Ativo</option>
+                                    <option {{ isset($aluno) && $aluno->situacao == 2 ? 'selected' : '' }} value="2">Inativo</option>
                                 </select>
                             </div>
                         </div>
@@ -46,42 +53,42 @@
                         <div class="form-group row">
                             <label for="cep" class="col-md-2 col-form-label">CEP</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="cep" id="cep">
+                                <input class="form-control" type="text" value="{{ $aluno->cep ?? '' }}" name="cep" id="cep">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="logradouro" class="col-md-2 col-form-label">Logradouro</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="logradouro" id="logradouro">
+                                <input class="form-control" type="text" value="{{ $aluno->logradouro ?? '' }}" name="logradouro" id="logradouro">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="numero" class="col-md-2 col-form-label">Número</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="numero" id="numero">
+                                <input class="form-control" type="text" value="{{ $aluno->numero ?? '' }}" name="numero" id="numero">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="complemento" class="col-md-2 col-form-label">Complemento</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="complemento" id="complemento">
+                                <input class="form-control" type="text" value="{{ $aluno->complemento ?? '' }}" name="complemento" id="complemento">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="bairro" class="col-md-2 col-form-label">Bairro</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="bairro" id="bairro">
+                                <input class="form-control" type="text" value="{{ $aluno->bairro ?? '' }}" name="bairro" id="bairro">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="cidade" class="col-md-2 col-form-label">Cidade</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="cidade" id="cidade">
+                                <input class="form-control" type="text" value="{{ $aluno->cidade ?? '' }}" name="cidade" id="cidade">
                             </div>
                         </div>
 
@@ -91,7 +98,7 @@
                                 <select name="curso" id="curso" class="custom-select">
                                     <option selected>Selecionar</option>
                                     @foreach($cursos as $curso)
-                                        <option value="{{ $curso->id }}">{{ $curso->curso }}</option>
+                                        <option value="{{ $curso->id }}" {{ isset($aluno) && $aluno->curso_id == $curso->id ? 'selected' : '' }}>{{ $curso->curso }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -100,14 +107,14 @@
                         <div class="form-group row">
                             <label for="cidade" class="col-md-2 col-form-label">Turma</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" value="" name="turma" id="turma">
+                                <input class="form-control" type="text" value="{{ $aluno->turma ?? '' }}" name="turma" id="turma">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="data_matricula" class="col-md-2 col-form-label">Data da matrícula</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="date" value="2019-08-19" name="data_matricula" id="data_matricula">
+                                <input class="form-control" type="date" value="{{ $aluno->data_matricula ?? '' }}" name="data_matricula" id="data_matricula">
                             </div>
                         </div>
 
@@ -121,7 +128,7 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-primary waves-effect waves-light mt-4">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light mt-4">@if (isset($aluno)) Editar @else Cadastrar @endif</button>
 
                     </form>
                 </div>

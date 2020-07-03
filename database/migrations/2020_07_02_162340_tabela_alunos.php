@@ -16,6 +16,7 @@ class TabelaAlunos extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->increments('id');
             $table->text('nome');
+            $table->text('matricula');
             $table->unsignedInteger('situacao');
             $table->text('cep');
             $table->text('logradouro');
@@ -26,6 +27,8 @@ class TabelaAlunos extends Migration
             $table->unsignedInteger('curso_id');
             $table->text('turma');
             $table->date('data_matricula');
+            $table->longText('foto');
+            $table->longText('foto_formato');
             $table->timestamps(0);
 
             $table->foreign('curso_id')
