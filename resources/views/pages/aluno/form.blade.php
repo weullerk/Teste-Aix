@@ -144,7 +144,6 @@
     <!-- js script -->
     <script>
         function fileChange(e) {
-            console.log(e);
             if (e.target.value) {
                 let fileName = e.target.value.split("\\");
                 $('.custom-file-label').text(fileName[fileName.length-1]);
@@ -153,9 +152,24 @@
             }
         }
 
+        function buscaCep(e) {
+            let cep = e.target.value.replace(/[^\d]+/gi, "");
+            console.log(cep.length);
+            if (cep.length == 8) {
+                $.getJSON("{{ config('app.cep_service') }}" + cep, function (result) {
+
+                    $('#bairro').val(result.bairro);
+                    $('#logradouro').val(result.logradouro);
+                    $('#cidade').val(result.cidade);
+                    $('#estado').val(result.estado);
+                });
+            }
+        }
+
         $(document).ready(function() {
             $('#customFile').on('change', fileChange);
-        })
+            $('#cep').on('change', buscaCep);
+        });
 
     </script>
 @endsection

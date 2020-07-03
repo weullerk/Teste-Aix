@@ -56,6 +56,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'cep_service' => env('APP_CEP_SERVICE', null),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
