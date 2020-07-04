@@ -22,7 +22,19 @@
                 <div class="card-body">
                     <h4 class="card-title">Cursos</h4>
                     <p class="card-title-desc">Desmarque os cursos que não deseja incluir.</p>
-                    <form action="#">
+
+                    @if (isset($message))
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    <form method="post" action="">
+                        @csrf
+
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead class="thead-light">
                             <tr>
@@ -31,75 +43,24 @@
                                 <th style="width: 70px;">Importar</th>
                             </tr>
                             </thead>
-
-
                             <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="analisar" name="analisar[]">
-                                        <label class="custom-control-label" for="analisar"></label>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach($cursos_temporarios as $curso)
+                                <tr>
+                                    <td>{{ $curso->matricula }}</td>
+                                    <td>{{ $curso->curso }}</td>
+                                    <td>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="analisar{{ $curso->id }}" name="analisar[]" value="{{ $curso->id }}" {{ $curso->situacao == 1 ? 'checked' : '' }}>
+                                            <label class="custom-control-label" for="analisar{{ $curso->id }}"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
 
-
-                            <button type="button" class="btn btn-success btn-lg btn-block waves-effect waves-light mb-1 mt-4">Importar</button>
-
+                        <button type="submit" @if (count($cursos_temporarios) == 0) disabled @endif class="btn btn-primary btn-lg btn-block waves-effect waves-light mb-1 mt-4">Importar</button>
+{{--                        <button type="submit" class="btn btn-primary waves-effect waves-light">Importar</button>--}}
                     </form>
                 </div>
             </div>

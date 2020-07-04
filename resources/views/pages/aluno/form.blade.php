@@ -154,7 +154,7 @@
 
         function buscaCep(e) {
             let cep = e.target.value.replace(/[^\d]+/gi, "");
-            console.log(cep.length);
+
             if (cep.length == 8) {
                 $.getJSON("{{ config('app.cep_service') }}" + cep, function (result) {
 

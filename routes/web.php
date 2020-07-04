@@ -24,5 +24,5 @@ Route::get('/cursos', 'CursoController@index');
 Route::match(['get', 'post'],'/cursos/cadastrar', 'CursoController@cadastrar');
 Route::match(['get', 'post'], '/cursos/editar/{id}', 'CursoController@editar');
 
-Route::get('/importar-cursos', 'ImportarCursoController@index');
-Route::get('/importar-cursos/analise', 'ImportarCursoController@analise');
+Route::match(['get', 'post'], '/importar-cursos', 'ImportarCursoController@index');
+Route::match(['get', 'post'], '/importar-cursos/analise', 'ImportarCursoController@analise');

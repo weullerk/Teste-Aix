@@ -14,7 +14,12 @@ class AlunoController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.aluno.index');
+        $data = [];
+
+        $alunoService = new AlunoService();
+        $data['alunos'] = $alunoService->listar()->sortDesc();
+
+        return view('pages.aluno.index', $data);
     }
 
     public function cadastrar(Request $request)

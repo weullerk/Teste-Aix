@@ -5,6 +5,7 @@ namespace App\Services;
 
 
 use App\Model\Curso;
+use App\Model\CursoImportacao;
 
 class CursoService
 {
@@ -38,5 +39,35 @@ class CursoService
 
     public function listar() {
         return Curso::all();
+    }
+
+    public function listarRecursivo() {
+        return Curso::all()->sortDesc();
+    }
+
+    public function importar()
+    {
+        $importacoes = 0;
+
+        $cursosTemporarios = CursoImportacao::where('situacao', 1)->get();
+
+        foreach($cursosTemporarios as $cursoTemporario) {
+            $curso = Curso::where([
+                ['curso', '=', $cursoTemporario->curso],
+                ['matricula', '=', $cursoTemporario->matricula]
+            ])->first();
+
+            if ($curso == null) {
+                $novoCurso = new Curso();
+                $novoCurso->curso = $cursoTemporario->curso;
+                $novoCurso->matricula = $cursoTemporario->matricula;
+                $novoCurso->situacao = 1;
+                if ($novoCurso->save()) {
+                    $importacoes += 1;
+                }
+            }
+        }
+
+        return $importacoes;
     }
 }

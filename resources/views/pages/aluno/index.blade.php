@@ -38,68 +38,46 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div class="avatar-xs">
-                                    <span class="avatar-title rounded-circle">
-                                        D
-                                    </span>
-                                </div>
-                            </td>
-                            <td>
-                                <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">David McHenry</a></h5>
-                            </td>
-                            <td>Ativo</td>
-                            <td>
-                                <div>
-                                    Engenharia Elétrica
-                                </div>
-                            </td>
-                            <td>
-                                A
-                            </td>
-                            <td>
-                                <ul class="list-inline font-size-20 contact-links mb-0">
-                                    <li class="list-inline-item px-2">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Editar"><i class="bx bx-message-square-dots"></i></a>
-                                    </li>
-                                    <li class="list-inline-item px-2">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Inativar"><i class="bx bx-user-circle"></i></a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <div>
-                                    <img class="rounded-circle avatar-xs" src="assets/images/users/avatar-2.jpg" alt="">
-                                </div>
-                            </td>
-                            <td>
-                                <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">Frank Kirk</a></h5>
-                            </td>
-                            <td>Inativo</td>
-                            <td>
-                                <div>
-                                    Administração
-                                </div>
-                            </td>
-                            <td>
-                                B
-                            </td>
-                            <td>
-                                <ul class="list-inline font-size-20 contact-links mb-0">
-                                    <li class="list-inline-item px-2">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Editar"><i class="bx bx-message-square-dots"></i></a>
-                                    </li>
-                                    <li class="list-inline-item px-2">
-                                        <a href="" data-toggle="tooltip" data-placement="top" title="Inativar"><i class="bx bx-user-circle"></i></a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
+                        @foreach($alunos as $aluno)
+
+                            <tr>
+                                <td>{{ $aluno->matricula }}</td>
+                                <td>
+                                    <div class="avatar-xs">
+                                        @if ($aluno->foto != null)
+                                            <img class="rounded-circle avatar-xs" src="data:{{$aluno->foto_formato}};base64,{!! base64_encode(decrypt($aluno->foto)) !!}" alt="">
+                                        @else
+                                            <span class="avatar-title rounded-circle">
+                                                {{ $aluno->nome[0] }}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </td>
+                                <td>
+                                    <h5 class="font-size-14 mb-1"><a href="#" class="text-dark">{{ $aluno->nome }}</a></h5>
+                                </td>
+                                <td>{{ $aluno->situacao }}</td>
+                                <td>
+                                    <div>
+                                        {{ $aluno->curso->curso }}
+                                    </div>
+                                </td>
+                                <td>
+                                    {{ $aluno->turma }}
+                                </td>
+                                <td>
+                                    <ul class="list-inline font-size-20 contact-links mb-0">
+                                        <li class="list-inline-item px-2">
+                                            <a href="{{ config('app.url') }}/alunos/editar/{{ $aluno->id }}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="bx bx-pencil"></i></a>
+                                        </li>
+                                        <li class="list-inline-item px-2">
+                                            <a href="{{ config('app.url') }}/alunos/deletar/{{ $aluno->id }}" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="bx bx-trash"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                        @endforeach
                         </tbody>
                     </table>
 

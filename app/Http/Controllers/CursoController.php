@@ -12,7 +12,12 @@ class CursoController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.curso.index');
+        $data = [];
+
+        $service = new CursoService();
+        $data['cursos'] = $service->listarRecursivo();
+
+        return view('pages.curso.index', $data);
     }
 
     public function cadastrar(Request $request)

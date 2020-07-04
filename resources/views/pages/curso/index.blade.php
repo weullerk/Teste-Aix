@@ -25,40 +25,32 @@
                     </h4>
                     <p class="card-title-desc">Todos os cursos registrados e suas informações relevantes se encontram na tabela abaixo.</p>
 
-                    <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table id="datatable" class="table table-centered table-nowrap table-hover" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="thead-light">
                         <tr>
                             <th style="width: 70px;">#</th>
-                            <th>Name</th>
+                            <th>Nome</th>
+                            <th>Situação</th>
+                            <th style="width: 20%;">Ação</th>
                         </tr>
                         </thead>
-
-
                         <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                        </tr>
+                        @foreach($cursos as $curso)
+                            <tr>
+                                <td>{{ $curso->matricula }}</td>
+                                <td>{{ $curso->curso }}</td>
+                                <td>{{ $curso->situacao }}</td>
+                                <td>
+                                    <ul class="list-inline font-size-20 contact-links mb-0">
+                                        <li class="list-inline-item px-2">
+                                            <a href="{{ config('app.url') }}/cursos/editar/{{ $curso->id }}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="bx bx-pencil"></i></a>
+                                        </li>
+                                        <li class="list-inline-item px-2">
+                                            <a href="{{ config('app.url') }}/cursos/deletar/{{ $curso->id }}" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="bx bx-trash"></i></a>
+                                        </li>
+                                    </ul>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
 

@@ -25,7 +25,7 @@ class alunoService
         $aluno->curso_id = $data['curso'];
         $aluno->turma = $data['turma'];
         $aluno->data_matricula = $data['data_matricula'];
-        $aluno->foto = $data['foto'];
+        $aluno->foto = $data['foto_encrypted'];
         $aluno->foto_formato = $data['foto_formato'];
 
         return $aluno->save();
