@@ -16,7 +16,11 @@
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
                             <h1 class="display-2 font-weight-medium">4<i class="bx bx-buoy bx-spin text-primary display-3"></i>4</h1>
-                            <h4 class="text-uppercase">Desculpe, página não encontrada</h4>
+                            <h4 class="text-uppercase">Desculpe, página não encontrada! </h4>
+                            <p>Um dos motívos podem ser: <br />
+                                Permissão de acesso <br />
+                                Registro inexistente <br />
+                                Página inválida</p>
                             <div class="mt-5 text-center">
                                 <a class="btn btn-primary waves-effect waves-light" href="{{ config('app.url') }}/">Back to Dashboard</a>
                             </div>

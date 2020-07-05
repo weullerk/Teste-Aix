@@ -31,6 +31,7 @@
                             </button>
                         </div>
                     @endif
+
                     <form method="post" enctype="multipart/form-data" action="">
                         @csrf
 

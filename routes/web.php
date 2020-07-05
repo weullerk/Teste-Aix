@@ -13,16 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::match(['get', 'post'],'/login', 'HomeController@login');
+Route::match(['get', 'post'],'/', 'HomeController@login');
+Route::match(['get'],'/404', 'HomeController@notfound');
 
-Route::get('/alunos', 'AlunoController@index');
-Route::match(['get', 'post'], '/alunos/cadastrar', 'AlunoController@cadastrar');
-Route::match(['get', 'post'], '/alunos/editar/{id}', 'AlunoController@editar');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'HomeController@index');
 
+    Route::get('/alunos', 'AlunoController@index');
+    Route::match(['get', 'post'], '/alunos/cadastrar', 'AlunoController@cadastrar');
+    Route::match(['get', 'post'], '/alunos/editar/{id}', 'AlunoController@editar');
 
-Route::get('/cursos', 'CursoController@index');
-Route::match(['get', 'post'],'/cursos/cadastrar', 'CursoController@cadastrar');
-Route::match(['get', 'post'], '/cursos/editar/{id}', 'CursoController@editar');
+    Route::get('/cursos', 'CursoController@index');
+    Route::match(['get', 'post'],'/cursos/cadastrar', 'CursoController@cadastrar');
+    Route::match(['get', 'post'], '/cursos/editar/{id}', 'CursoController@editar');
 
-Route::match(['get', 'post'], '/importar-cursos', 'ImportarCursoController@index');
-Route::match(['get', 'post'], '/importar-cursos/analise', 'ImportarCursoController@analise');
+    Route::match(['get', 'post'], '/importar-cursos', 'ImportarCursoController@index');
+    Route::match(['get', 'post'], '/importar-cursos/analise', 'ImportarCursoController@analise');
+});

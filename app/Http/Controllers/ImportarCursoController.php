@@ -69,7 +69,6 @@ class ImportarCursoController extends Controller
             } else {
                 $data['message'] = "Falha ao realizar importação! Todos os cursos no arquivo já existem.";
             }
-
         }
 
         $data['cursos_temporarios'] = $cursoImportacao->listar();

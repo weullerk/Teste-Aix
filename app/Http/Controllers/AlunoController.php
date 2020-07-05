@@ -122,6 +122,9 @@ class AlunoController extends Controller
         $alunoService = new AlunoService();
         $data['aluno'] = $alunoService->buscar($id);
 
+        if ($data['aluno'] == null)
+            return view('notfound');
+
         $cursoService = new CursoService();
         $data['cursos'] = $cursoService->listar();
 
