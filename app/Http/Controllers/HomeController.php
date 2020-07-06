@@ -56,6 +56,15 @@ class HomeController extends Controller
         return view('login');
     }
 
+    public function logout() {
+        $data = [];
+        $data['message'] = "Dados inválidos";
+
+        Auth::logout();
+
+        return redirect(config('app.url') . '/login', $data);
+    }
+
     public function notfound() {
         return view('notfound');
     }

@@ -56,6 +56,14 @@
                 </button>
             </div>
 
+            <div class="dropdown d-none d-lg-inline-block ml-1">
+                <a href="{{ config('app.url') }}/logout">
+                    <button type="button" class="btn header-item noti-icon waves-effect">
+                        <i class="bx bx-log-out-circle"></i>
+                    </button>
+                </a>
+            </div>
+
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="bx bx-cog bx-spin"></i>
