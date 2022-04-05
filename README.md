@@ -6,10 +6,7 @@ Website com página de cadastro de curso e alunos, com pesquisa de cep e datagri
 
 ## Requisitos
 
-A aplicação foi desenvolvida sob o ASP.NET Core WebAP; informações no link abaixo:
-
-https://docs.microsoft.com/en-us/dotnet/core/about
-
+A aplicação foi desenvolvida em PHP e Laravel Framework.
 ## Executar aplicação
 
 Para executar essa aplicação em seu computador, siga os passos abaixo:
